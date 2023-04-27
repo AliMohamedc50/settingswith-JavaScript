@@ -1,1 +1,1 @@
-# settingswith-JavaScript
+# settings-with-JavaScript
