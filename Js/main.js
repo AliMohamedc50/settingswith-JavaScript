@@ -128,11 +128,9 @@ randomizeimgs()
 let chooseBgStorage = localStorage.getItem("numper_bg")
 
 if (chooseBgStorage !== null) {
-    // landingPage.style.backgroundImage = `url("")`;
-    landingPage.style.backgroundImage = `url("imgs/wallpaperflare.com_wallpaper\ \(${chooseBgStorage}\).jpg")`;
-    landingPage.style.backgroundImage = `url("")`;
     landingPage.style.backgroundImage = `url("imgs/wallpaperflare.com_wallpaper\ \(${chooseBgStorage}\).jpg")`;
 }
+
 
 chooseBg.forEach(p => {
     p.addEventListener("click", (e) =>{
@@ -140,6 +138,10 @@ chooseBg.forEach(p => {
         landingPage.style.backgroundImage = `url("imgs/wallpaperflare.com_wallpaper\ \(${chooseBgStorage}\).jpg")`;
     })
 })
+
+
+
+
 
 
 // Skills selector 
@@ -176,6 +178,7 @@ ourGallery.forEach( img => {
         overlay.className = "popup-overlay"
         // Add Overlay to Body
         document.body.appendChild(overlay)
+
         // creat popup box
         let popupBox = document.createElement("div")
         // Add class Name in popup box
@@ -187,8 +190,24 @@ ourGallery.forEach( img => {
         popupBox.appendChild(popupImg)
         // add popup box on Overlay
         overlay.appendChild(popupBox)
-
+        if(img.alt) {
+            // creat h2
+            const creatH2 = document.createElement("h2")
+            creatH2.innerText = img.alt
+            // console.log(creatH2)
+            // add h2 to popup box
+            popupBox.appendChild(creatH2)
+        }
     })
 })
+
+// for close the overlay
+document.addEventListener("click", function (e)  {
+    if(e.target.classList.contains("popup-overlay")) {
+        // popupOverlay.style.display = "none"
+        document.querySelector(".popup-overlay").remove()
+    }
+})
+
 
 
