@@ -72,16 +72,16 @@ h4 {
     cursor: pointer;
 }
 .settings-container ul li:nth-child(1) {
-    background-color: #795548;
+    background-color: #99c2ff;
 }
 .settings-container ul li:nth-child(2) {
     background-color: #ff9800;
 }
 .settings-container ul li:nth-child(3) {
-    background-color: #00bcd4;
+    background-color: #099159;
 }
 .settings-container ul li:nth-child(4) {
-    background-color: #e91e63;
+    background-color: #607d8b;
 }
 
 .settings-container ul .active {
@@ -328,3 +328,248 @@ h4 {
     max-width: 100%;
 }
 /* End Gallery  */
+
+
+
+/* <!-- Start Timeline --> */
+
+.timeline {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.timeline .timeline-container {
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-container::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    margin-left: -1px;
+    background: var(--main-color);
+    z-index: -10;
+}
+
+
+
+.timeline .year {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    width: fit-content;
+    margin: 20px auto;
+    background-color: var(--main-color);
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: white;
+    z-index: 100;
+    font-weight: bold;
+}
+.timeline .timeline-left ,
+.timeline .timeline-right {
+    width: calc(50% - 25px);
+    margin-bottom: 30px;
+    position: relative;
+}
+.timeline .timeline-left {
+    float: left;
+}
+
+
+
+
+
+.timeline .timeline-left::before {
+    top: 19px;
+    right: -35px;
+}
+.timeline .timeline-right::before {
+    top: 19px;
+    left: -35px;
+}
+.timeline .timeline-left::before ,
+.timeline .timeline-right::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.timeline .timeline-left::after {
+    border-color:transparent transparent transparent #eee ;
+    right: -19px;
+}
+.timeline .timeline-right::after {
+    border-color:transparent #eee transparent transparent  ;
+    left: -19px;
+}
+.timeline .timeline-left::after ,
+.timeline .timeline-right::after {
+    position: absolute;
+    content: "";
+    border-style:solid ;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+    top: 19px;
+}
+
+.clear-box{
+    clear: both;
+}
+
+.timeline .timeline-right {
+    float: right;
+}
+.timeline .content {
+    padding: 20px;
+    background-color: #a9f3a2;
+}
+.timeline .content h3 {
+    color: var(--main-color);
+
+}
+.timeline .content p {
+
+    line-height: 1.5;
+}
+
+
+.form #head {
+    width: 100% ;
+    margin-bottom: 20px;
+}
+
+.form #head {
+    border: none;
+    border-bottom: 2px solid #0000001f;
+    color: var(--main-color);
+}
+
+.form #paragraph {
+    border-bottom: 2px solid #0000001f;
+}
+.form #submit,
+.form #cancel {
+    background: var(--main-color);
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 21px;
+    margin-top: 10px ;
+} 
+.form #cancel {
+    display: none;
+    background: rgb(60, 190, 188);
+}
+
+.form #head:hover,
+.form #head:focus
+ {
+    border-bottom: 2px solid #00000097;
+    outline: none;
+}
+
+
+.edit,
+.delete {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 3px;
+}
+
+.edit:hover,
+.delete:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+
+
+
+.bullets {
+    position: fixed;
+    top: 250px;
+    left: 11px;
+    background-color: white;
+    z-index: 1000;
+    padding: 8px;
+}
+.bullets .bul {
+    position: relative;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    outline: var(--main-color) solid 2px;
+    border: white solid 2px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+
+
+
+
+
+.bullets .bul:nth-child(1)::after ,
+.bullets .bul:nth-child(2)::after,
+.bullets .bul:nth-child(3)::after,
+.bullets .bul:nth-child(4)::after {
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    background: var(--main-color);
+    padding: 2px 13px;
+    border-radius: 339px 129px 128px 307px;
+    display: none;
+    transition: .5s;
+    opacity: 0;
+
+}
+
+.bullets .bul:nth-child(1)::after {
+    content: "About";
+}
+.bullets .bul:nth-child(2)::after {
+    content: "Our skilla";
+    width: 70px;
+}
+.bullets .bul:nth-child(3)::after {
+    content: "Gallery";
+}
+.bullets .bul:nth-child(4)::after {
+    content: "Timeline";
+}
+
+.bullets .bul:hover:after {
+    opacity: 1;
+    display: block;
+}
+.bullets .bul:hover {
+    background-color: var(--main-color);
+}

@@ -4,6 +4,21 @@ var root = document.querySelector(":root");
 let gearSetting = document.querySelector(".fa-gear")
 let settingBox = document.querySelector(".setting-box")
 
+let timelineContainer = document.querySelector(".timeline-container")
+
+
+
+
+// get head h3
+let headInput = document.getElementById("head")
+// get paragraph p
+let paragraphInput = document.getElementById("paragraph")
+// get submit button
+let submitInput = document.getElementById("submit")
+// get cancel button
+let cancel = document.getElementById("cancel")
+
+
 
 let backgroundRandomOption = true ;
 let clearIntervalBg ;
@@ -27,8 +42,6 @@ if(backgroundRandomOptionStorage !== null) {
     }else {
         backgroundRandomOption = false;
     }
-    console.log(backgroundRandomOption)
-
     document.querySelector(".yesno .yes").classList.remove("active-bg")
     if( backgroundRandomOption === true) {
         document.querySelector(".yesno .yes").classList.add("active-bg")
@@ -62,7 +75,6 @@ document.querySelector(".setting-box .fa-gear").onclick = function () {
 }
 
 
-console.log(localStorage.getItem("color"))
 
 colorLs.forEach((li) => { 
     li.addEventListener("click", (e)=>{
@@ -78,7 +90,6 @@ colorLs.forEach((li) => {
         e.target.classList.add("active")
         
     })
-    // li.classList.remove("active")
 })
 
 if (document.getElementById("bg-random") ) {
@@ -165,6 +176,7 @@ window.onscroll = function () {
 }
 
 
+
 // creat popup
 
 
@@ -190,11 +202,11 @@ ourGallery.forEach( img => {
         popupBox.appendChild(popupImg)
         // add popup box on Overlay
         overlay.appendChild(popupBox)
+
         if(img.alt) {
             // creat h2
             const creatH2 = document.createElement("h2")
             creatH2.innerText = img.alt
-            // console.log(creatH2)
             // add h2 to popup box
             popupBox.appendChild(creatH2)
         }
@@ -211,3 +223,176 @@ document.addEventListener("click", function (e)  {
 
 
 
+
+
+
+
+
+
+
+
+submitInput.onclick = function addNew() {
+    if(headInput.value !== "" && paragraphInput.value !== "") {
+        
+        // Create timeline-left div
+        let timelineLeft = document.createElement("div")
+        let randomnum = Math.floor(Math.random() * 3) + 0
+        let timelineLeftArr =
+        ["timeline-left", "timeline-right",
+        "timeline-left", "timeline-right",
+        "timeline-left", "timeline-right"]
+        // timelineLeft.className = "timeline-right"
+        timelineLeft.className = timelineLeftArr[randomnum]
+
+        // creat content div 
+        let content = document.createElement("div")
+        content.className = "content"
+
+        // creat h3 
+        let headcontent = document.createElement("h3")
+        headcontent.innerHTML = headInput.value
+        // Add h3 to content div
+        content.appendChild(headcontent)
+
+        // creat p
+        let pcontent = document.createElement("p")
+        pcontent.innerHTML = paragraphInput.value
+        // Add p to content div
+        content.appendChild(pcontent)
+
+        // creat button Edit 
+        let editButton = document.createElement("button")
+        editButton.classList = "edit"
+        editButton.innerHTML = "Edit"
+        content.appendChild(editButton)
+
+        // creat button Edit 
+        let deletButton = document.createElement("button")
+        deletButton.classList = "delete"
+        deletButton.innerHTML = "Delete"
+        content.appendChild(deletButton)
+
+
+        // Add content div to timeline-left r
+        timelineLeft.appendChild(content)
+
+        // Create clear-box 
+        let clearBox = document.createElement("div")
+        clearBox.className = "clear-box"
+        //Add clear-box to timelineContainer
+        timelineContainer.appendChild(clearBox)
+        // Add timelineLeft to timelineContainer
+        timelineContainer.appendChild(timelineLeft)
+        headInput.value = ""
+        paragraphInput.value = ""
+    }
+
+    
+    
+        // get button Edit
+        let edit = document.querySelectorAll(".edit")
+        
+        // get content for Edit 
+        let content = document.querySelectorAll(".timeline .content")
+        
+        
+    edit.forEach((ee) => {
+        ee.onclick = function() {
+            // console.log(ee.parentNode)
+            headInput.value = ee.parentNode.querySelector("h3").innerHTML
+            paragraphInput.value = ee.parentNode.querySelector("p").innerHTML
+            submitInput.innerHTML = "Edit"
+            cancel.onclick = function () {
+                submitInput.innerHTML = "Add"
+                headInput.value = ""
+                paragraphInput.value = ""
+                cancel.style.display = "none"
+            }
+            cancel.style.display = "block"
+            submitInput.onclick = function() {
+                if(submitInput.innerHTML == "Edit" ){
+                    ee.parentNode.querySelector("h3").innerHTML = headInput.value
+                    ee.parentNode.querySelector("p").innerHTML = paragraphInput.value
+                    submitInput.innerHTML = "Add"
+                    headInput.value = ""
+                    paragraphInput.value = ""
+                    
+                }else {
+                    addNew()
+                }
+            }
+        }
+    })
+    
+
+
+
+
+
+}
+
+
+let deletebutton = document.querySelectorAll(".delete")
+
+deletebutton.forEach((deletebut) => {
+    deletebut.onclick = function () {
+        // let clearBox = document.querySelectorAll 
+        deletebut.parentElement.remove()
+        deletebut.parentNode.insertAdjacentHTML("beforebegin" , "<p>This is before my div.</p>")
+        // deletebut.parentNode.insertAdjacentHTML("beforebegin").remove()
+        // deletebut.parentNode.remove()
+
+    //     console.log(deletebut.parentNode.after.remove())
+    // console.log(deletebut.parentNode.querySelector(":nth-of-type(0)"))
+    // deletebut. .querySelector("p:nth-of-type(1)");
+    }
+})
+
+    
+
+
+
+let bullets = document.querySelectorAll(".bullets .bul")
+
+
+let linkes = document.querySelectorAll(".links a") 
+
+
+function scrollIntoViewsection(element) {
+    console.log(element)
+    element.forEach((e) => {
+        e.onclick = function(e) {
+            e.preventDefault();
+            // console.log()
+            document.querySelector(e.target.dataset.bul).scrollIntoView({
+                behavior : 'smooth'
+            })
+        }
+    })
+}
+
+scrollIntoViewsection(bullets)
+scrollIntoViewsection(linkes)
+
+
+
+
+
+
+
+// bullets.forEach((bul) => {
+//     bul.onclick = function(e) {
+//         // console.log()
+//         document.querySelector(e.target.dataset.bul).scrollIntoView({
+//             behavior : 'smooth'
+//         })
+//     }
+// })
+
+
+
+
+
+
+
+addNew()

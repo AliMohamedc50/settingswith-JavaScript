@@ -30,10 +30,10 @@
             <div class="color-box">
                 <h3>Color</h3>
                 <ul class="color-list">
-                    <li class="active" data-color="#795548" ></li>
+                    <li class="active" data-color="#99c2ff" ></li>
                     <li data-color="#ff9800"></li>
-                    <li data-color="#00bcd4"></li>
-                    <li data-color="#e91e63"></li>
+                    <li data-color="#099159"></li>
+                    <li data-color="#607d8b"></li>
                 </ul>
             </div>
         </div>
@@ -56,6 +56,11 @@
         </div>
     </div>
 
+    <div class="bullets">
+        <div class="bul" data-bul=".about-us"></div>
+        <div class="bul" data-bul=".skills"></div>
+        <div class="bul" data-bul=".gallery"></div>
+        <div class="bul" data-bul=".timeline"></div>
     </div>
     <!-- End Setting box -->
 
@@ -67,13 +72,13 @@
         <div class="container">
             <div class="header-area">
             <div class="logo"><span>Special </span>Design</div>
-            <ul class="links">
-                <li> <a class="active" href="#">about</a></li>
-                <li> <a href="#">service</a></li>
-                <li> <a href="#">products</a></li>
-                <li> <a href="#">contact</a></li>
-            </ul>
-        </div>
+                <ul class="links">
+                    <li> <a data-bul=".about-us" class="active" href="#">about</a></li>
+                    <li> <a data-bul=".skills" href="#">skills</a></li>
+                    <li> <a data-bul=".gallery" href="#">gallery</a></li>
+                    <li> <a data-bul=".timeline" href="#">timeline</a></li>
+                </ul>
+            </div>
         </div>
        
         <div class="introduction-area">
@@ -166,6 +171,103 @@
             </div>
         </div>
     </div>
+    <!-- End Our Skills -->
+
+    <!-- Start Timeline -->
+    <div class="timeline">
+        <div class="container">
+            <h2>Timeline</h2>
+            <div class="timeline-container">
+                <div class="year">
+                    2020
+                </div>
+                <div class="timeline-left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur 
+                            adipisicing elit.</p>
+                            <button class="edit" role="button">Edit</button>
+                        <!-- <button class="edit">Edit</button> -->
+                        <button class="delete" role="button">Delete</button>
+                        <!-- <button class="delete">Delete</button> -->
+                    </div>
+                </div>
+                <div class="clear-box"></div>
+                <div class="timeline-right">
+                    <div class="content">
+                        <h3>Testing Heading 2</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur 
+                            adipisicing elit. Repudiandae consequatur 
+                            facere quos at nihil veniam dolores ducimus 
+                            fugit doloribus. Velit, facilis vel. 
+                            Fugit vel animi 
+                            iure inventore maiores ipsam totam.</p>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                    </div>
+                </div>
+                <div class="clear-box"></div>
+                <div class="timeline-right">
+                    <div class="content">
+                        <h3>Testing Heading 2</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur 
+                            adipisicing elit. Repudiandae consequatur 
+                            facere quos at nihil veniam dolores ducimus 
+                            fugit doloribus. Velit, facilis vel. 
+                            Fugit vel animi 
+                            iure inventore maiores ipsam totam.</p>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                    </div>
+                </div>
+                <div class="clear-box"></div>
+                <div class="timeline-left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur 
+                            adipisicing elit.</p>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+                <div class="clear-box"></div>
+                <div class="timeline-left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur 
+                            adipisicing elit. Sed quod magni, 
+                            modi laudantium dignissimos sit 
+                            temporibus quidem labore, maiores debitis, voluptatem 
+                            laboriosam laborum itaque molestias 
+                            earum quia! Adipisci, cupiditate ullam.</p>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form">
+                <input id="head" type="text" placeholder="head">
+                <textarea id="paragraph"  placeholder="paragraph"  cols="115" rows="10"></textarea>
+                <button id="submit" type="submit"> Add </button>
+                <button id="cancel" type="submit">Cancel</button>
+
+                <!-- <input  type="submit"  placeholder="submit"> -->
+
+                <!-- <div id="submit">wrffwr</div> -->
+            </div>
+                
+
+                <!-- <input type="text" placeholder="paragraph"> -->
+                <!-- <button id="submit" type="submit"></button> -->
+                <!-- <input  type="submit"  placeholder="submit"> -->
+
+            
+        </div>
+
+    </div>
+    <!-- End Timeline -->
+
 
     <script src="Js/main.js"></script>
 </body>
