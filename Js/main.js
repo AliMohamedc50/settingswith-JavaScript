@@ -8,7 +8,6 @@ let timelineContainer = document.querySelector(".timeline-container")
 
 
 
-
 // get head h3
 let headInput = document.getElementById("head")
 // get paragraph p
@@ -25,7 +24,6 @@ let clearIntervalBg ;
 
 
 let yesno = document.querySelectorAll(".yesno span")
-
 
 let checkbox = document.querySelector("#bg-random")
 
@@ -220,17 +218,6 @@ document.addEventListener("click", function (e)  {
         document.querySelector(".popup-overlay").remove()
     }
 })
-
-
-
-
-
-
-
-
-
-
-
 submitInput.onclick = function addNew() {
     if(headInput.value !== "" && paragraphInput.value !== "") {
         
@@ -298,7 +285,6 @@ submitInput.onclick = function addNew() {
         
     edit.forEach((ee) => {
         ee.onclick = function() {
-            // console.log(ee.parentNode)
             headInput.value = ee.parentNode.querySelector("h3").innerHTML
             paragraphInput.value = ee.parentNode.querySelector("p").innerHTML
             submitInput.innerHTML = "Edit"
@@ -324,11 +310,6 @@ submitInput.onclick = function addNew() {
         }
     })
     
-
-
-
-
-
 }
 
 
@@ -342,15 +323,9 @@ deletebutton.forEach((deletebut) => {
         // deletebut.parentNode.insertAdjacentHTML("beforebegin").remove()
         // deletebut.parentNode.remove()
 
-    //     console.log(deletebut.parentNode.after.remove())
-    // console.log(deletebut.parentNode.querySelector(":nth-of-type(0)"))
     // deletebut. .querySelector("p:nth-of-type(1)");
     }
 })
-
-    
-
-
 
 let bullets = document.querySelectorAll(".bullets .bul")
 
@@ -359,11 +334,9 @@ let linkes = document.querySelectorAll(".links a")
 
 
 function scrollIntoViewsection(element) {
-    console.log(element)
     element.forEach((e) => {
         e.onclick = function(e) {
             e.preventDefault();
-            // console.log()
             document.querySelector(e.target.dataset.bul).scrollIntoView({
                 behavior : 'smooth'
             })
@@ -374,25 +347,15 @@ function scrollIntoViewsection(element) {
 scrollIntoViewsection(bullets)
 scrollIntoViewsection(linkes)
 
+// let activeClass = document.querySelectorAll(".links active")
 
 
+function handleActive(ee) {
+    ee.target.parentElement.querySelectorAll("active").forEach((element) => {
+        element.classList.remove("active")
+    }) 
+    // ee.target.classList.add("active")
+}
+handleActive(ee)
 
-
-
-
-// bullets.forEach((bul) => {
-//     bul.onclick = function(e) {
-//         // console.log()
-//         document.querySelector(e.target.dataset.bul).scrollIntoView({
-//             behavior : 'smooth'
-//         })
-//     }
-// })
-
-
-
-
-
-
-
-addNew()
+// addNew()

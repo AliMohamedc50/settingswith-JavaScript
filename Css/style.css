@@ -480,29 +480,29 @@ h4 {
 
 .edit,
 .delete {
-  background-color: #c2fbd7;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-right: 3px;
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 3px;
 }
 
 .edit:hover,
 .delete:hover {
-  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+transform: scale(1.05) rotate(-1deg);
 }
 
 
@@ -514,9 +514,10 @@ h4 {
     position: fixed;
     top: 250px;
     left: 11px;
-    background-color: white;
+    background-color: #4f4f4f30;
     z-index: 1000;
     padding: 8px;
+    border-radius: 60px;
 }
 .bullets .bul {
     position: relative;
@@ -524,17 +525,12 @@ h4 {
     cursor: pointer;
     width: 25px;
     height: 25px;
-    background-color: white;
+    background-color: transparent;
     outline: var(--main-color) solid 2px;
     border: white solid 2px;
     border-radius: 50%;
     transition: .5s;
 }
-
-
-
-
-
 
 .bullets .bul:nth-child(1)::after ,
 .bullets .bul:nth-child(2)::after,
@@ -549,7 +545,6 @@ h4 {
     display: none;
     transition: .5s;
     opacity: 0;
-
 }
 
 .bullets .bul:nth-child(1)::after {
@@ -573,3 +568,4 @@ h4 {
 .bullets .bul:hover {
     background-color: var(--main-color);
 }
+
